@@ -1,0 +1,409 @@
+% This is "sig-alternate.tex" V2.1 April 2013
+% This file should be compiled with V2.5 of "sig-alternate.cls" May 2012
+%
+% This example file demonstrates the use of the 'sig-alternate.cls'
+% V2.5 LaTeX2e document class file. It is for those submitting
+% articles to ACM Conference Proceedings WHO DO NOT WISH TO
+% STRICTLY ADHERE TO THE SIGS (PUBS-BOARD-ENDORSED) STYLE.
+% The 'sig-alternate.cls' file will produce a similar-looking,
+% albeit, 'tighter' paper resulting in, invariably, fewer pages.
+%
+% ----------------------------------------------------------------------------------------------------------------
+% This .tex file (and associated .cls V2.5) produces:
+%       1) The Permission Statement
+%       2) The Conference (location) Info information
+%       3) The Copyright Line with ACM data
+%       4) NO page numbers
+%
+% as against the acm_proc_article-sp.cls file which
+% DOES NOT produce 1) thru' 3) above.
+%
+% Using 'sig-alternate.cls' you have control, however, from within
+% the source .tex file, over both the CopyrightYear
+% (defaulted to 200X) and the ACM Copyright Data
+% (defaulted to X-XXXXX-XX-X/XX/XX).
+% e.g.
+% \CopyrightYear{2007} will cause 2007 to appear in the copyright line.
+% \crdata{0-12345-67-8/90/12} will cause 0-12345-67-8/90/12 to appear in the copyright line.
+%
+% ---------------------------------------------------------------------------------------------------------------
+% This .tex source is an example which *does* use
+% the .bib file (from which the .bbl file % is produced).
+% REMEMBER HOWEVER: After having produced the .bbl file,
+% and prior to final submission, you *NEED* to 'insert'
+% your .bbl file into your source .tex file so as to provide
+% ONE 'self-contained' source file.
+%
+% ================= IF YOU HAVE QUESTIONS =======================
+% Questions regarding the SIGS styles, SIGS policies and
+% procedures, Conferences etc. should be sent to
+% Adrienne Griscti (griscti@acm.org)
+%
+% Technical questions _only_ to
+% Gerald Murray (murray@hq.acm.org)
+% ===============================================================
+%
+% For tracking purposes - this is V2.0 - May 2012
+
+\documentclass{sig-alternate-05-2015}
+
+
+\begin{document}
+
+% Copyright
+\setcopyright{acmcopyright}
+%\setcopyright{acmlicensed}
+%\setcopyright{rightsretained}
+%\setcopyright{usgov}
+%\setcopyright{usgovmixed}
+%\setcopyright{cagov}
+%\setcopyright{cagovmixed}
+
+
+% DOI
+\doi{10.475/123_4}
+
+% ISBN
+\isbn{123-4567-24-567/08/06}
+
+%Conference
+\conferenceinfo{PLDI '13}{June 16--19, 2013, Seattle, WA, USA}
+
+\acmPrice{\$15.00}
+
+%
+% --- Author Metadata here ---
+\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
+%\CopyrightYear{2007} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
+%\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
+% --- End of Author Metadata ---
+
+\title{BDA: A Platform for Big Data Analysis}
+\subtitle{[Extended Abstract]
+\titlenote{A full version of this paper is available as
+\textit{Author's Guide to Preparing ACM SIG Proceedings Using
+\LaTeX$2_\epsilon$\ and BibTeX} at
+\texttt{www.acm.org/eaddress.htm}}}
+%
+% You need the command \numberofauthors to handle the 'placement
+% and alignment' of the authors beneath the title.
+%
+% For aesthetic reasons, we recommend 'three authors at a time'
+% i.e. three 'name/affiliation blocks' be placed beneath the title.
+%
+% NOTE: You are NOT restricted in how many 'rows' of
+% "name/affiliations" may appear. We just ask that you restrict
+% the number of 'columns' to three.
+%
+% Because of the available 'opening page real-estate'
+% we ask you to refrain from putting more than six authors
+% (two rows with three columns) beneath the article title.
+% More than six makes the first-page appear very cluttered indeed.
+%
+% Use the \alignauthor commands to handle the names
+% and affiliations for an 'aesthetic maximum' of six authors.
+% Add names, affiliations, addresses for
+% the seventh etc. author(s) as the argument for the
+% \additionalauthors command.
+% These 'additional authors' will be output/set for you
+% without further effort on your part as the last section in
+% the body of your article BEFORE References or any Appendices.
+
+\numberofauthors{8} %  in this sample file, there are a *total*
+% of EIGHT authors. SIX appear on the 'first-page' (for formatting
+% reasons) and the remaining two appear in the \additionalauthors section.
+%
+\author{
+% You can go ahead and credit any number of authors here,
+% e.g. one 'row of three' or two rows (consisting of one row of three
+% and a second row of one, two or three).
+%
+% The command \alignauthor (no curly braces needed) should
+% precede each author name, affiliation/snail-mail address and
+% e-mail address. Additionally, tag each line of
+% affiliation/address with \affaddr, and tag the
+% e-mail address with \email.
+%
+% 1st. author
+\alignauthor
+Ben Trovato\titlenote{Dr.~Trovato insisted his name be first.}\\
+       \affaddr{Institute for Clarity in Documentation}\\
+       \affaddr{1932 Wallamaloo Lane}\\
+       \affaddr{Wallamaloo, New Zealand}\\
+       \email{trovato@corporation.com}
+% 2nd. author
+\alignauthor
+G.K.M. Tobin\titlenote{The secretary disavows
+any knowledge of this author's actions.}\\
+       \affaddr{Institute for Clarity in Documentation}\\
+       \affaddr{P.O. Box 1212}\\
+       \affaddr{Dublin, Ohio 43017-6221}\\
+       \email{webmaster@marysville-ohio.com}
+% 3rd. author
+\alignauthor Lars Th{\o}rv{\"a}ld\titlenote{This author is the
+one who did all the really hard work.}\\
+       \affaddr{The Th{\o}rv{\"a}ld Group}\\
+       \affaddr{1 Th{\o}rv{\"a}ld Circle}\\
+       \affaddr{Hekla, Iceland}\\
+       \email{larst@affiliation.org}
+\and  % use '\and' if you need 'another row' of author names
+% 4th. author
+\alignauthor Lawrence P. Leipuner\\
+       \affaddr{Brookhaven Laboratories}\\
+       \affaddr{Brookhaven National Lab}\\
+       \affaddr{P.O. Box 5000}\\
+       \email{lleipuner@researchlabs.org}
+% 5th. author
+\alignauthor Sean Fogarty\\
+       \affaddr{NASA Ames Research Center}\\
+       \affaddr{Moffett Field}\\
+       \affaddr{California 94035}\\
+       \email{fogartys@amesres.org}
+% 6th. author
+\alignauthor Charles Palmer\\
+       \affaddr{Palmer Research Laboratories}\\
+       \affaddr{8600 Datapoint Drive}\\
+       \affaddr{San Antonio, Texas 78229}\\
+       \email{cpalmer@prl.com}
+}
+% There's nothing stopping you putting the seventh, eighth, etc.
+% author on the opening page (as the 'third row') but we ask,
+% for aesthetic reasons that you place these 'additional authors'
+% in the \additional authors block, viz.
+\additionalauthors{Additional authors: John Smith (The Th{\o}rv{\"a}ld Group,
+email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
+(The Kumquat Consortium, email: {\texttt{jpkumquat@consortium.net}}).}
+\date{30 July 1999}
+% Just remember to make sure that the TOTAL number of authors
+% is the number that will appear on the first page PLUS the
+% number that will appear in the \additionalauthors section.
+
+\maketitle
+\begin{abstract}
+Big data processing and machine learning have been made the world a better place. However, configuring machine learning task is always a complicated job. BDA is a GUI-based platform for big data analysis and mining, which provides a wealth of machine learning algorithms. Based on Hadoop and Spark, BDA is able to process massive datasets. One begins a task by construct Directed Acyclic Graph (DAG) of algorithms with GUI. Each link in the DAG represents a data flow between algorithms. Machine learning is made easy, beautiful and understandable in BDA.
+\end{abstract}
+
+
+%
+% The code below should be generated by the tool at
+% http://dl.acm.org/ccs.cfm
+% Please copy and paste the code instead of the example below. 
+%
+\begin{CCSXML}
+<ccs2012>
+ <concept>
+  <concept_id>10010520.10010553.10010562</concept_id>
+  <concept_desc>Computer systems organization~Embedded systems</concept_desc>
+  <concept_significance>500</concept_significance>
+ </concept>
+ <concept>
+  <concept_id>10010520.10010575.10010755</concept_id>
+  <concept_desc>Computer systems organization~Redundancy</concept_desc>
+  <concept_significance>300</concept_significance>
+ </concept>
+ <concept>
+  <concept_id>10010520.10010553.10010554</concept_id>
+  <concept_desc>Computer systems organization~Robotics</concept_desc>
+  <concept_significance>100</concept_significance>
+ </concept>
+ <concept>
+  <concept_id>10003033.10003083.10003095</concept_id>
+  <concept_desc>Networks~Network reliability</concept_desc>
+  <concept_significance>100</concept_significance>
+ </concept>
+</ccs2012>  
+\end{CCSXML}
+
+\ccsdesc[500]{Computer systems organization~Embedded systems}
+\ccsdesc[300]{Computer systems organization~Redundancy}
+\ccsdesc{Computer systems organization~Robotics}
+\ccsdesc[100]{Networks~Network reliability}
+
+
+%
+% End generated code
+%
+
+%
+%  Use this command to print the description
+%
+\printccsdesc
+
+% We no longer use \terms command
+%\terms{Theory}
+
+\keywords{Data Mining; Big Data Analysis; Machine Learning}
+
+\section{Introduction}
+With the great advances in big data processing and machine learning, data mining application is close to daily life than ever before. For examples, commercial recommendation systems applied a lot of big data processing and machine learning techniques, in order to provide more accurate recommendations. A classical roadmap of creating recommendation task shown as follow: data collecting; data extraction, transform and load (ETL); feature engineering; model selection and evaluation; online application. While, configuring and going through all these process is a complicated job. An integrated platform is needed to enable one begin a machine learning task easily.
+
+Analytic applications  Traditional tools like SAS, SPSS show their strength on descriptive and diagnostic analytics, and are useful for static structural datasets. However, they are not cloud-based, which limited the usage of advanced techniques in distributed systems. Besides, traditional tools has deficiency in predictive and prescriptive analytics of massive non-structural data. Systems like Azure Machine Learning and Alibaba Yushanfang are modern cloud platform for data scientists to design data experiments. They are very scalable and easy use. Also, they have advantages in big data processing. 
+
+We present a modern cloud-based Big Data Analysis(BDA) system. The system consists of three components: BDA Studio, BDA Lib, BDA Task. It's a Web service based on Hadoop and Spark. In addition, we develop a dataflow framework based on Oozie workflow.
+
+Our BDA, objective, advantages, main features.
+The papers framework.
+
+
+\section{TECHNOLOGY SPECIFICATION}
+\subsection{System Architecture}
+BDA is a GUI-based platform designed on distributed system. It applied HDFS as storage, Spark and Map-Reduce as computation framework, and Oozie as job scheduler. Figure~\ref{fig:arch} shows system architecture.
+
+\begin{figure}
+\centering
+\includegraphics[height=2.8in]{cikm-architecture.eps}
+\caption{ A overview of BDA architecture.}
+\label{fig:arch}
+\end{figure}
+
+We divide the architecture into three hierarchy: Storage Layer, Schedule and Computation Layer and User Interface Layer.
+\begin{itemize}
+\item \textbf{Storage Layer:} This layer focuses on how to store the resources and datasets. We use database to store meta data of programs and jobs, while programs were stored on HDFS. All resources are stored on HDFS. And, Hive was applied to facilitates reading, writing, and managing large datasets residing in HDFS using SQL.
+\item \textbf{Schedule and Computation Layer:} This layer focuses on how bda jobs are dispatched and executed. BDA applied Oozie as job scheduler. Each actions in the job will be dispatched to any node in the Haddop cluster by YARN and run as a Map task. Spark and Map-Reduce is our foundation of distributed computation framework.
+\item \textbf{User Interface Layer:} This layer focuses how to provide friendly functionality for data scientists. There are three components, BDA Studio, BDA Lib and BDA Task. BDA Studio is a web service which support graphic-based components, program-able components, and data flow based job DAG constructions. BDA Lib provides a wealth of machine learning algorithms. BDA Task provides examples of real use cases.
+\end{itemize}
+We will introduce how these layer cooperation.
+\section{BDA Studio}
+BDA Studio is a GUI based web service, which allows data scientist to construct an analytic tasks by drawing DAGs of algorithms and datasets. When a well-formed job DAG is submit, it will be scheduled by Oozie, and finally run on the cloud. We provide job clone, rerun and edit functionalities which facilitates the reuse of job schemas. Besides, user custom programs are allowed to submit to the platform with configuration. In addition, BDA also provide program-able components, which support SQL, Spark, and Shell. 
+
+The main technical challenges we encountered are: how to support GUI based DAG construction; how to generate workflow configuration that will be submit to Oozie; how to enable program running on the cloud; how to support ETL.
+
+\subsection{GUI based Algorithm Components}
+Each algorithm or dataset submitted to BDA, will be represented as a GUI component in BDA Studio. One could click to add a component to a BDA job. In additions, the data dependencies between different components are presented as arrows. Figure~\ref{fig:dag} shows an example of job DAG.
+
+\begin{figure}
+\centering
+\includegraphics[height=2in]{DAG.eps}
+\caption{ An example of job DAG.}
+\label{fig:dag}
+\end{figure}
+
+\subsection{Dataflow}
+As shown in Figure~\ref{fig:dag}, BDA job is dataflow based. Which differs from Oozie workflow. A workflow defined how processes are scheduled, but the data dependency is not specified. In order to support dataflow job description, we first collect the data dependencies of different components in the BDA job DAG, then solve the components dependencies which is a really a workflow.
+
+\subsection{Command Line Format}
+A program without usage guidance couldn't be run correctly. In BDA, the usage command line format must be specified when a program is uploading. The real command line would be generated when a BDA job is submitted, with the structure of DAG and parameter configurations of components. The command line format must be defined following the rules bellow:
+
+\begin{itemize}
+\item \textbf{For Input File Position Holder:}
+
+ \{in:ContentType:"descriptions"\}
+\item \textbf{For Output File Position Holder:}
+
+\{out:ContentType,StorageType:"descriptions"\}
+\item \textbf{For Numerical Parameter Position Holder:}
+
+["parameter name":Type,min,max:default,value]
+\item \textbf{For Boolean Parameter Position Holder:}
+
+["parameter name":Bool:default,value]
+\item \textbf{For String Parameter Position Holder:}
+
+ ["parameter name":String:default,"value"]
+\end{itemize}
+
+Here comes an example of logistic regression(LR) command line format, it specifies the usage of LR. $train\_pt$, $validate\_pt$, and $model\_pt$ are input files. $optimizer$, $max\_iter$, $reg$ and $learn\_rate$ are parameters of LR.
+$$
+\begin{array}{ll}
+java~-cp~local.jar & bda.local.runnable.LR.Train \\
+--train\_pt & \{in:LabeledPoint:"train~set"\}\\
+--validate\_pt & \{in:LabeledPoint:"validate~set"\}\\
+--model\_pt & \{out:LRModel,HFile:"model"\}\\
+--optimizer & ["opt":String:default,"sgd"]\\
+--max\_iter & ["max\_iter":Int:default,20]\\
+--reg & ["reg":Double:default,0.01]\\
+--learn\_rate & ["learn\_rate":Double:default,0.1]
+\end{array}
+$$
+
+\subsection{Program-able Component}
+What’s program-able component?
+It’s important to ETL. The significance of ETL.
+The technology specification 
+
+\section{Appendix}
+
+\section{Conclusions}
+This paragraph will end the body of this sample document.
+Remember that you might still have Acknowledgments or
+Appendices; brief samples of these
+follow.  There is still the Bibliography to deal with; and
+we will make a disclaimer about that here: with the exception
+of the reference to the \LaTeX\ book, the citations in
+this paper are to articles which have nothing to
+do with the present subject and are used as
+examples only.
+%\end{document}  % This is where a 'short' article might terminate
+
+%ACKNOWLEDGMENTS are optional
+\section{Acknowledgments}
+This section is optional; it is a location for you
+to acknowledge grants, funding, editing assistance and
+what have you.  In the present case, for example, the
+authors would like to thank Gerald Murray of ACM for
+his help in codifying this \textit{Author's Guide}
+and the \textbf{.cls} and \textbf{.tex} files that it describes.
+
+%
+% The following two commands are all you need in the
+% initial runs of your .tex file to
+% produce the bibliography for the citations in your paper.
+\bibliographystyle{abbrv}
+\bibliography{sigproc}  % sigproc.bib is the name of the Bibliography in this case
+% You must have a proper ".bib" file
+%  and remember to run:
+% latex bibtex latex latex
+% to resolve all references
+%
+% ACM needs 'a single self-contained file'!
+%
+%APPENDICES are optional
+%\balancecolumns
+\appendix
+%Appendix A
+\section{Headings in Appendices}
+The rules about hierarchical headings discussed above for
+the body of the article are different in the appendices.
+In the \textbf{appendix} environment, the command
+\textbf{section} is used to
+indicate the start of each Appendix, with alphabetic order
+designation (i.e. the first is A, the second B, etc.) and
+a title (if you include one).  So, if you need
+hierarchical structure
+\textit{within} an Appendix, start with \textbf{subsection} as the
+highest level. Here is an outline of the body of this
+document in Appendix-appropriate form:
+\subsection{Introduction}
+\subsection{The Body of the Paper}
+\subsubsection{Type Changes and  Special Characters}
+\subsubsection{Math Equations}
+\paragraph{Inline (In-text) Equations}
+\paragraph{Display Equations}
+\subsubsection{Citations}
+\subsubsection{Tables}
+\subsubsection{Figures}
+\subsubsection{Theorem-like Constructs}
+\subsubsection*{A Caveat for the \TeX\ Expert}
+\subsection{Conclusions}
+\subsection{Acknowledgments}
+\subsection{Additional Authors}
+This section is inserted by \LaTeX; you do not insert it.
+You just add the names and information in the
+\texttt{{\char'134}additionalauthors} command at the start
+of the document.
+\subsection{References}
+Generated by bibtex from your ~.bib file.  Run latex,
+then bibtex, then latex twice (to resolve references)
+to create the ~.bbl file.  Insert that ~.bbl file into
+the .tex source file and comment out
+the command \texttt{{\char'134}thebibliography}.
+% This next section command marks the start of
+% Appendix B, and does not continue the present hierarchy
+\section{More Help for the Hardy}
+The sig-alternate.cls file itself is chock-full of succinct
+and helpful comments.  If you consider yourself a moderately
+experienced to expert user of \LaTeX, you may find reading
+it useful but please remember not to change it.
+%\balancecolumns % GM June 2007
+% That's all folks!
+\end{document}
