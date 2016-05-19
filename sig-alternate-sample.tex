@@ -180,7 +180,7 @@ email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
 
 \maketitle
 \begin{abstract}
-Big data processing and machine learning have been made the world a better place. However, configuring machine learning task is always a complicated job. BDA is a GUI-based platform for big data analysis and mining, which provides a wealth of machine learning algorithms. Based on Hadoop and Spark, BDA is able to process massive datasets. One begins a task by construct Directed Acyclic Graph (DAG) of algorithms with GUI. Each link in the DAG represents a data flow between algorithms. Machine learning is made easy, beautiful and understandable in BDA.
+Big data processing and machine learning have been made the world a better place. However, configuring machine learning task is always a complicated job. BDA is a GUI-based platform for big data analysis and mining, which provides a wealth of machine learning algorithms. Based on Hadoop and Spark, BDA is able to process massive datasets. One begins a task by construct dataflow based acyclic graph of algorithms with GUI. Each link in the acyclic graph represents a dataflow between algorithms. Machine learning is made easy, beautiful and understandable in BDA.
 \end{abstract}
 
 
@@ -235,15 +235,13 @@ Big data processing and machine learning have been made the world a better place
 \keywords{Data Mining; Big Data Analysis; Machine Learning}
 
 \section{Introduction}
-With the great advances in big data processing and machine learning, data mining application is close to daily life than ever before. For examples, commercial recommendation systems applied a lot of big data processing and machine learning techniques, in order to provide more accurate recommendations. A classical roadmap of creating recommendation task shown as follow: data collecting; data extraction, transform and load (ETL); feature engineering; model selection and evaluation; online application. While, configuring and going through all these process is a complicated job. An integrated platform is needed to enable one begin a machine learning task easily.
+Data mining and analysis have been widely use in many industry verticals, such as financial services, communications, retail and e-commerce. However, configuring and going through the whole roadmap of data mining and analysis will be a complicated job. Integrated applications that facilitate going through the data mining and analysis job are widely demanded for data scientists and business analysts. 
 
-Analytic applications  Traditional tools like SAS, SPSS show their strength on descriptive and diagnostic analytics, and are useful for static structural datasets. However, they are not cloud-based, which limited the usage of advanced techniques in distributed systems. Besides, traditional tools has deficiency in predictive and prescriptive analytics of massive non-structural data. Systems like Azure Machine Learning and Alibaba Yushanfang are modern cloud platform for data scientists to design data experiments. They are very scalable and easy use. Also, they have advantages in big data processing. 
+Traditional tools like SAS, SPSS show their strength on descriptive and diagnostic analytics, and are useful for static structural datasets. However, they are not cloud-based, which limited the usage of advanced techniques in distributed systems. Systems like Azure Machine Learning and Alibaba Yushanfang are modern cloud platform for data scientists to design data experiments.
 
-We present a modern cloud-based Big Data Analysis(BDA) system. The system consists of three components: BDA Studio, BDA Lib, BDA Task. It's a Web service based on Hadoop and Spark. In addition, we develop a dataflow framework based on Oozie workflow.
+Modern analysis tools shares features, such as native support advanced analytic modeling techniques, visualization of dataflow design, ability to save dataflows into files and libraries for later reuse, allowing program using scripting language.
 
-Our BDA, objective, advantages, main features.
-The papers framework.
-
+We present a modern cloud-based Big Data Analysis(BDA) system, which meets features described above. It's design on distributed system, Hadoop and Spark, and choose Oozie as job scheduler. 
 
 \section{TECHNOLOGY SPECIFICATION}
 \subsection{System Architecture}
@@ -256,33 +254,21 @@ BDA is a GUI-based platform designed on distributed system. It applied HDFS as s
 \label{fig:arch}
 \end{figure}
 
-We divide the architecture into three hierarchy: Storage Layer, Schedule and Computation Layer and User Interface Layer.
+We divide the architecture into three hierarchy: Resource Management Layer, Schedule and Computation Layer and User Interface Layer.
 \begin{itemize}
-\item \textbf{Storage Layer:} This layer focuses on how to store the resources and datasets. We use database to store meta data of programs and jobs, while programs were stored on HDFS. All resources are stored on HDFS. And, Hive was applied to facilitates reading, writing, and managing large datasets residing in HDFS using SQL.
+\item \textbf{Resource Management Layer:} This layer focuses on how to store the resources and datasets. We use database to store meta data of programs and jobs, while programs were stored on HDFS. All resources are stored on HDFS. And, Hive was applied to facilitates reading, writing, and managing large datasets residing in HDFS using SQL.
 \item \textbf{Schedule and Computation Layer:} This layer focuses on how bda jobs are dispatched and executed. BDA applied Oozie as job scheduler. Each actions in the job will be dispatched to any node in the Haddop cluster by YARN and run as a Map task. Spark and Map-Reduce is our foundation of distributed computation framework.
-\item \textbf{User Interface Layer:} This layer focuses how to provide friendly functionality for data scientists. There are three components, BDA Studio, BDA Lib and BDA Task. BDA Studio is a web service which support graphic-based components, program-able components, and data flow based job DAG constructions. BDA Lib provides a wealth of machine learning algorithms. BDA Task provides examples of real use cases.
+\item \textbf{User Interface Layer:} This layer focuses how to provide friendly functionality for data scientists. There are three components, BDA Studio, BDA Lib and BDA Task. BDA Studio is a web service which support graphic-based components, program-able components, and dataflow based acyclic job graph constructions. BDA Lib provides a wealth of machine learning algorithms. BDA Task provides examples of real use cases.
 \end{itemize}
 We will introduce how these layer cooperation.
-\section{BDA Studio}
-BDA Studio is a GUI based web service, which allows data scientist to construct an analytic tasks by drawing DAGs of algorithms and datasets. When a well-formed job DAG is submit, it will be scheduled by Oozie, and finally run on the cloud. We provide job clone, rerun and edit functionalities which facilitates the reuse of job schemas. Besides, user custom programs are allowed to submit to the platform with configuration. In addition, BDA also provide program-able components, which support SQL, Spark, and Shell. 
 
-The main technical challenges we encountered are: how to support GUI based DAG construction; how to generate workflow configuration that will be submit to Oozie; how to enable program running on the cloud; how to support ETL.
 
-\subsection{GUI based Algorithm Components}
-Each algorithm or dataset submitted to BDA, will be represented as a GUI component in BDA Studio. One could click to add a component to a BDA job. In additions, the data dependencies between different components are presented as arrows. Figure~\ref{fig:dag} shows an example of job DAG.
+\section{BDA Lib}
+BDA Lib is the algorithm library of BDA, it provides a wealth of machine learning, data mining algorithms. We have both Standalone and Spark implementations for each algorithm. All these algorithms are uploaded to BDA system and categorized as pre-processing, transformation, machine learning, and evaluation. Besides, we provide a sort of API for BDA Lib.
 
-\begin{figure}
-\centering
-\includegraphics[height=2in]{DAG.eps}
-\caption{ An example of job DAG.}
-\label{fig:dag}
-\end{figure}
+Each algorithm upload to BDA will be persist as a directory on HDFS, in which there are a run script of the algorithm, a directory named "lib". Run script is generated for algorithm to help start up the algorithm program. The directory "lib" contains all resources and executable files that are demand when the algorithm is used.
 
-\subsection{Dataflow}
-As shown in Figure~\ref{fig:dag}, BDA job is dataflow based. Which differs from Oozie workflow. A workflow defined how processes are scheduled, but the data dependency is not specified. In order to support dataflow job description, we first collect the data dependencies of different components in the BDA job DAG, then solve the components dependencies which is a really a workflow.
-
-\subsection{Command Line Format}
-A program without usage guidance couldn't be run correctly. In BDA, the usage command line format must be specified when a program is uploading. The real command line would be generated when a BDA job is submitted, with the structure of DAG and parameter configurations of components. The command line format must be defined following the rules bellow:
+When uploading to BDA, the usage command line format of algorithm must be correctly configured. Otherwise, algorithm won't run successfully. The real command line would be generated when a BDA job is submitted, with configurations of algorithms. The command line format must be defined following the rules bellow:
 
 \begin{itemize}
 \item \textbf{For Input File Position Holder:}
@@ -302,20 +288,62 @@ A program without usage guidance couldn't be run correctly. In BDA, the usage co
  ["parameter name":String:default,"value"]
 \end{itemize}
 
-Here comes an example of logistic regression(LR) command line format, it specifies the usage of LR. $train\_pt$, $validate\_pt$, and $model\_pt$ are input files. $optimizer$, $max\_iter$, $reg$ and $learn\_rate$ are parameters of LR.
+ContentType specifies the format of file contents, where General as general files, LibSVM, TSV, CSV, Binary, JSON, XML.
+
+StoreType specifies how the resources is store on HDFS, where SFile as a single file, HFile as a Hadoop distributed file, and Directory.
+
+For numerical parameter, Type specifies the parameter types which may be Integer, Double or Float. In additions, the min and max value could be skipped if there are no minimum or maximum limitations.
+
+Here comes an example of logistic regression(LR) command line format, it specifies the usage of LR train. $train\_pt$, $validate\_pt$, and $model\_pt$ are input files. $optimizer$, $max\_iter$, $reg$ and $learn\_rate$ are parameters of LR.
+
 $$
 \begin{array}{ll}
 java~-cp~local.jar & bda.local.runnable.LR.Train \\
---train\_pt & \{in:LabeledPoint:"train~set"\}\\
---validate\_pt & \{in:LabeledPoint:"validate~set"\}\\
---model\_pt & \{out:LRModel,HFile:"model"\}\\
+--train\_pt & \{in:LibSVM:"train~set"\}\\
+--validate\_pt & \{in:LibSVM:"validate~set"\}\\
+--model\_pt & \{out:Binary,HFile:"model"\}\\
 --optimizer & ["opt":String:default,"sgd"]\\
---max\_iter & ["max\_iter":Int:default,20]\\
+--max\_iter & ["max\_iter":Integer:default,20]\\
 --reg & ["reg":Double:default,0.01]\\
 --learn\_rate & ["learn\_rate":Double:default,0.1]
 \end{array}
 $$
 
+
+\section{BDA Studio}
+BDA Studio is a GUI-based web service on the top of BDA architecture, allowed data scientists to access to resources and services provided by BDA easily. BDA Studio provides services like job schedule, distributed dispatch and execution, account management and resource management. 
+
+\begin{figure}
+\centering
+\includegraphics[height=3.5in]{proc.eps}
+\caption{ Process to perform job.}
+\label{fig:proc}
+\end{figure}
+
+Figure~\ref{fig:proc} shows the process to perform a job. As is shown, one must construct a dataflow based acyclic graph of algorithms and datasets, where each arrow specify a dataflow. When a well-formed job graph is submitted, it will be scheduled by Oozie, and finally run on the cloud. We also provide job clone, rerun and edit functionalities which facilitates the reuse of job schemas after the job is finished. 
+
+
+The main technical challenges we have encountered are: GUI based DAG construction; dataflow based on Oozie workflow; enable program running on the cloud; ETL.
+
+Besides, user custom programs are allowed to submit to the platform with configuration. In addition, BDA also provide program-able components, which support SQL, Spark, and Shell. 
+
+
+\subsection{Dataflow Based Acyclic Graph}
+We introduce dataflow based acyclic graph into BDA system based on Oozie workflow. And Oozie is a workflow scheduler system, where workflow is a collection of actions arranged in a control dependency DAG(Directed Acyclic Graph). Control dependency from one action to another means that the second action can't run until the first action has completed. The concept dataflow differed with workflow as to dataflow specify data dependency between different actions. And the control dependency of actions are determined by the data dependency.
+
+
+\begin{figure}
+\centering
+\includegraphics[height=2in]{DAG.eps}
+\caption{ An example for dataflow based acyclic job graph.}
+\label{fig:dag}
+\end{figure}
+
+Figure~\ref{fig:dag} is an example for dataflow based acyclic job graph. Each algorithm or dataset submitted to BDA, will be represented as a GUI component in BDA Studio, where the points on the top of component are dataflow input anchor points and on the bottom are dataflow output anchor points. Anchor points are generated according to algorithm data parameters. Each arrow represent as a data dependency between components. In addition, the arrow's start and end anchor points must be matched, otherwise the algorithm will not run correctly.
+
+\subsection{Run job on the cloud}
+After 
+Each Oozie action will run as a Hadoop Map task when it's scheduled. During action, run script of algorithm will be download firstly. Then run script will start up the 
 \subsection{Program-able Component}
 What’s program-able component?
 It’s important to ETL. The significance of ETL.

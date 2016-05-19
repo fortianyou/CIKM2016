@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2016.5.10)  13 MAY 2016 09:19
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2016.5.10)  19 MAY 2016 18:47
 entering extended mode
 **sig-alternate-sample.tex
 
@@ -270,7 +270,7 @@ File: omsaer.fd 1999/12/27
 LaTeX Font Info:    Font shape `OMS/aer/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 230.
 
-Overfull \hbox (2.79779pt too wide) in paragraph at lines 242--243
+Overfull \hbox (2.79779pt too wide) in paragraph at lines 244--245
 []\T1/aer/m/n/9 We present a mod-ern cloud-based Big Da-ta Anal-y-sis(BDA)
  []
 
@@ -279,31 +279,39 @@ File: cikm-architecture.eps Graphic file (type eps)
 
 
 ]
-File: DAG.eps Graphic file (type eps)
- <DAG.eps>
-Overfull \hbox (9.3797pt too wide) in paragraph at lines 305--306
+Overfull \hbox (9.3797pt too wide) in paragraph at lines 295--296
 \OML/cmm/m/it/9 validate[]pt$\T1/aer/m/n/9 , and $\OML/cmm/m/it/9 model[]pt$ \T
 1/aer/m/n/9 are in-put files. $\OML/cmm/m/it/9 optimizer$\T1/aer/m/n/9 , $\OML/
 cmm/m/it/9 max[]iter$\T1/aer/m/n/9 ,
  []
 
 
-Overfull \hbox (6.74405pt too wide) detected at line 317
+Overfull \hbox (6.74405pt too wide) detected at line 308
 []
  []
 
+File: proc.eps Graphic file (type eps)
+<proc.eps>
+Overfull \hbox (1.76958pt too wide) in paragraph at lines 324--325
+\T1/aer/m/n/9 GUI based DAG con-struc-tion; dataflow based on Oozie work-
+ []
+
 [2]
+File: DAG.eps Graphic file (type eps)
+ <DAG.eps>
 No file sig-alternate-sample.bbl.
-[3]
+[3] [4
+
+]
 ("D:\百度云同步盘\BDA\CIKM\SIG Proceedings Template-Jan2015 Zip\sig-alter
 nate-sample.aux") ) 
 Here is how much of TeX's memory you used:
- 2283 strings out of 495355
- 26464 string characters out of 3183882
+ 2286 strings out of 495355
+ 26490 string characters out of 3183882
  91294 words of memory out of 3000000
- 5401 multiletter control sequences out of 15000+200000
+ 5403 multiletter control sequences out of 15000+200000
  49708 words of font info for 64 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 39i,12n,34p,749b,464s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,12n,34p,592b,464s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on sig-alternate-sample.dvi (3 pages, 18720 bytes).
+Output written on sig-alternate-sample.dvi (4 pages, 20136 bytes).
