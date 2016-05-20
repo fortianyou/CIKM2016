@@ -180,7 +180,7 @@ email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
 
 \maketitle
 \begin{abstract}
-Big data processing and machine learning have been made the world a better place. However, configuring machine learning task is always a complicated job. BDA is a GUI-based platform for big data analysis and mining, which provides a wealth of machine learning algorithms. Based on Hadoop and Spark, BDA is able to process massive datasets. One begins a task by construct dataflow based acyclic graph of algorithms with GUI. Each link in the acyclic graph represents a dataflow between algorithms. Machine learning is made easy, beautiful and understandable in BDA.
+Big data processing and machine learning have made the world a better place. However, configuring machine learning task is always a complicated job. BDA is a GUI-based platform for big data analysis and mining, which provides a wealth of machine learning algorithms. Based on Hadoop and Spark, BDA is able to process massive datasets. One begins a task by construct dataflow based acyclic graph of algorithms with GUI. Each link in the acyclic graph represents a dataflow between algorithms. Machine learning is made easy, beautiful and understandable in BDA.
 \end{abstract}
 
 
@@ -339,11 +339,19 @@ We introduce dataflow based acyclic graph into BDA system based on Oozie workflo
 \label{fig:dag}
 \end{figure}
 
-Figure~\ref{fig:dag} is an example for dataflow based acyclic job graph. Each algorithm or dataset submitted to BDA, will be represented as a GUI component in BDA Studio, where the points on the top of component are dataflow input anchor points and on the bottom are dataflow output anchor points. Anchor points are generated according to algorithm data parameters. Each arrow represent as a data dependency between components. In addition, the arrow's start and end anchor points must be matched, otherwise the algorithm will not run correctly.
+Figure~\ref{fig:dag} is an example for dataflow based acyclic job graph. Each algorithm or dataset uploaded to BDA, will be represented as a GUI component in BDA Studio, where the points on the top of component are dataflow input anchor points and on the bottom are dataflow output anchor points. Anchor points are generated according to algorithm data parameters. Each arrow represent as a data dependency between components. In addition, the arrow's start and end anchor points must be matched, otherwise the algorithm will not run correctly.
 
-\subsection{Run job on the cloud}
-After 
-Each Oozie action will run as a Hadoop Map task when it's scheduled. During action, run script of algorithm will be download firstly. Then run script will start up the 
+\subsection{Run jobs on the cloud}
+
+When the job graph is submitting, uuid file name will be created against each dataflow output anchor points. Later, the file parameter holder of the command format will be replaced with real file name according to setting of anchor points. In additions, other parameter holder will be replaced according to real parameter settings.
+
+After the job is submitted, BDA Studio will generate Oozie workflow according to dataflow based acyclic job graph. And workflow will be upload to the job path created on HDFS. Finally, we will submit this job to Oozie server which 
+
+Each Oozie action collected in the workflow will run as a Hadoop map task when it's scheduled. During the action, run script of respected algorithm will be sent to task container at first. Then run script will be started up. During the execution of the run script, it will configure the environment, download "lib" directory, execute the real command line, and upload file yielded to job path.
+
+\subsection{Edit and reuse job schema}
+BDA job, 数据重用等等.
+
 \subsection{Program-able Component}
 What’s program-able component?
 It’s important to ETL. The significance of ETL.

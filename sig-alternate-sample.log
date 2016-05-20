@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2016.5.10)  19 MAY 2016 18:47
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2016.5.10)  20 MAY 2016 09:15
 entering extended mode
 **sig-alternate-sample.tex
 
@@ -279,26 +279,31 @@ File: cikm-architecture.eps Graphic file (type eps)
 
 
 ]
-Overfull \hbox (9.3797pt too wide) in paragraph at lines 295--296
+Overfull \hbox (9.3797pt too wide) in paragraph at lines 297--298
 \OML/cmm/m/it/9 validate[]pt$\T1/aer/m/n/9 , and $\OML/cmm/m/it/9 model[]pt$ \T
 1/aer/m/n/9 are in-put files. $\OML/cmm/m/it/9 optimizer$\T1/aer/m/n/9 , $\OML/
 cmm/m/it/9 max[]iter$\T1/aer/m/n/9 ,
  []
 
 
-Overfull \hbox (6.74405pt too wide) detected at line 308
+Overfull \hbox (6.74405pt too wide) detected at line 310
 []
  []
 
 File: proc.eps Graphic file (type eps)
 <proc.eps>
-Overfull \hbox (1.76958pt too wide) in paragraph at lines 324--325
+Overfull \hbox (1.76958pt too wide) in paragraph at lines 326--327
 \T1/aer/m/n/9 GUI based DAG con-struc-tion; dataflow based on Oozie work-
  []
 
 [2]
 File: DAG.eps Graphic file (type eps)
  <DAG.eps>
+Overfull \hbox (3.37349pt too wide) in paragraph at lines 348--349
+\T1/aer/m/n/9 Oozie work-flow ac-cord-ing to dataflow based a-cyclic job graph.
+
+ []
+
 No file sig-alternate-sample.bbl.
 [3] [4
 
@@ -308,10 +313,10 @@ nate-sample.aux") )
 Here is how much of TeX's memory you used:
  2286 strings out of 495355
  26490 string characters out of 3183882
- 91294 words of memory out of 3000000
+ 92294 words of memory out of 3000000
  5403 multiletter control sequences out of 15000+200000
  49708 words of font info for 64 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  39i,12n,34p,592b,464s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on sig-alternate-sample.dvi (4 pages, 20136 bytes).
+Output written on sig-alternate-sample.dvi (4 pages, 21984 bytes).
