@@ -78,7 +78,7 @@
 %\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
 % --- End of Author Metadata ---
 
-\title{A Platform for Big Data Analysis}
+\title{Ease the Process of Machine Learning with Dataflow}
 \subtitle{[Extended Abstract]
 \titlenote{A full version of this paper is available as
 \textit{Author's Guide to Preparing ACM SIG Proceedings Using
@@ -247,39 +247,37 @@ Aimed to facilitate data mining and analysis job, and apply machine learning to 
 In following sections, we first introduce the system overview and then explains our system main features. Finally, we give the demonstration plan.
 \section{System Overview}
 \subsection{System Architecture}
-BDA is a GUI-based platform designed on distributed system. Figure~\ref{fig:arch} shows our system architecture.
+Our system is a GUI-based platform designed on distributed system. Figure~\ref{fig:arch} shows the architecture.
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[height=2.8in]{arch.eps}
-\caption{ A overview of BDA architecture.}
+\caption{ An overview of system architecture.}
 \label{fig:arch}
 \end{figure}
 
 The architecture is divided into two hierarchies: Infrastructure Structure Layer and User Interface Layer.
 \begin{itemize}
 \item \textbf{Infrastructure Structure Layer:} We use database to store meta data of programs and jobs, while other resources are stored on HDFS or managed by Hive. Jobs are scheduled by Oozie. Spark and Map-Reduce are our foundation of distributed computation framework.
-\item \textbf{User Interface Layer:} This layer focuses how to provide friendly functionality for data scientists. There are two components, BDA Studio, BDA Lib.
+\item \textbf{User Interface Layer:} This layer focuses how to provide friendly functionality for data scientists. There are two components, GUI-based Studio, Machine Learning Library.
 \end{itemize}
 
 
-\subsection{BDA Studio}
-BDA Studio is a GUI-based web service on the top of BDA architecture. One must register on BDA Studio, before using BDA system. BDA Studio provides services like job creation, job management, program and dataset upload and management, and account management. It cooperates with Hadoop, Spark and Oozie that allowed data scientists to access to resources and services provided by BDA easily.
+\subsection{GUI-based Studio}
+Studio is a GUI-based web service on the top of our system architecture. One must register on Studio, before using our system. Studio provides services like job creation, job management, program and dataset upload and management, and account management. It cooperates with Hadoop, Spark and Oozie that allowed data scientists to access to resources and services provided by our system easily.
 
-It's a client of Hadoop, Spark, and Oozie services. When a job is created, it will create job's application path on HDFS, and sent job to Oozie for scheduling and run it on cloud-side finally. A job in BDA system denotes an unit of machine learning task, and is allowed to edit and rerun.
+It's a client of Hadoop, Spark, and Oozie services. When a job is created, it will create job's application path on HDFS, and sent job to Oozie for scheduling and run it on cloud-side finally. A job in our system denotes an unit of machine learning task, and is allowed to edit and rerun.
 
-Although BDA provides powerful functionalities, it's emphasized that BDA studio is light, scalable and easy to deploy, cause it only need a database like mysql, a web server like tomcat and some configurations of Hadoop, Spark and Oozie.
+Although Studio provides powerful functionalities, it's emphasized that Studio is light, scalable and easy to deploy, cause it only need a database like mysql, a web server like tomcat and some configurations of Hadoop, Spark and Oozie.
 
 
-\subsection{BDA Lib}
-BDA Lib is the algorithm library of our system, it provides a wealth of machine learning, data mining algorithms that could be categorized as pre-processing, transformation, machine learning, and evaluation. We have both Standalone and Spark implementations for each algorithm. Also, we provide a sort of API for BDA Lib. 
+\subsection{Machine Learning Library}
+Machine Learning Library(ML Lib) is the algorithm library of our system, it provides a wealth of machine learning, data mining algorithms that could be categorized as pre-processing, transformation, machine learning, and evaluation. We have both Standalone and Spark implementations for each algorithm. Also, we provide a sort of API for ML Lib. 
 
 All these algorithms are wrap as runnable programs and uploaded to our system. The runnable programs uploaded are displayed as program components of our system that are reusable. When using the algorithm, one need only click to add the corresponding component. In this way, the user is free to programming, that makes algorithms more easy use. Besides, our system allows registers to upload custom programs and third party programs to our system as well. This is different from traditional tools that are forbidden program upload.
 
-\section{Main Features}
-BDA has devoted to provide powerful and light solution for machine learning tasks. And it has many advantages compared to traditional tools, such as enable to process massive data, high scalability and performance etc. Beyond that, we are going to introduce some particular features of our system.
 
-\subsection{Dataflow Based Directed Acyclic Graph}
+\section{Dataflow DAG}
 Before we discuss this section, let us make some clarification about workflow and dataflow.
 
 \begin{itemize}
@@ -289,29 +287,38 @@ Before we discuss this section, let us make some clarification about workflow an
 
 The concept dataflow differed with workflow as to dataflow specify data dependency between different actions. And the control dependency of actions are determined by the data dependency.
 
-Specifically, the process of machine learning task could be formulated by workflow correctly. There exists some workflow systems, such as Oozie, Azkaban. However, input and output data locations must be configured by user in those systems before it was submitted, otherwise it will failed. This implied that user have to know about where data was or will be stored. However, we believe it's not major concern users should focus on, but how to construct the tasks and how about the results. 
+\subsection{Machine Learning Task is A Dataflow}
+The bulk of the machine learning job workload consists of sequences of procedures written using a variety of tools and languages. Specifically, the control dependency of these diverse procedures could be formulated by workflow correctly. In this way, the details of procedures in the process is not concerned. While, the control dependency of procedures is underlined. 
+
+There exists some workflow systems, such as Oozie, Azkaban. However, input and output data locations of each actions must be configured by user in those systems before it was submitted, otherwise it will failed. This implied that user have to know about where data was or will be stored. However, we believe it's not major concern users should focus on, but what the source data  how to construct the tasks and how about the results. 
 
 Exactly, dataflow formulation of machine learning task is better, since the data dependency between actions determined the control dependency and the storage concern is eliminated in this way. 
 
+\subsection{Dataflow with Graphical User Interface}
 \begin{figure}[!htb]
 \centering
-\includegraphics[height=2in]{DAG.eps}
-\caption{An example of dataflow acyclic graph}
+\includegraphics[height=2in]{dataflow_DAG.eps}
+\caption{An example of dataflow DAG}
 \label{fig:dag}
 \end{figure}
 
-We introduced dataflow based acyclic graph into BDA system based on Oozie workflow. Figure~\ref{fig:dag} is an example of dataflow acyclic graph, where each datasets and programs are display as GUI components. The node shape on the top of GUI components are regard as input data anchors of the program, while the node shape on the bottom are output anchors. Each arrow means a dataflow between components. And arrow couldn't be linked except the anchors are type matched.
+We introduced GUI based dataflow DAG into our system founded on Oozie workflow. Figure~\ref{fig:dag} is an example of dataflow DAG, where each datasets and programs are displayed as GUI components.The node shape on the top of GUI components are regard as input data anchors of the program, while the node shape on the bottom are output anchors.  And the unique random HDFS file path will be generated for intermediate output data when the job is submitted. Each arrow means a dataflow between components. And arrow couldn't be linked except the anchors are type matched. After submitting a job to the cloud, each node in the job will be scheduled to execute according to the dataflow DAG. 
 
-The Oozie workflow will be generated according to our dataflow DAG. UUID file name will be generated for intermediate output data when the task is submitted. Moreover, user could access to or save the intermediate data using BDA.
+Based on GUI, we support user to create, configure, submit, and monitor a job in drag-and-drop manner. Also, we provide real time action state reports with color display on GUI components, where yellow, green and red mean actions is running, finished and error respectively.
+
+\section{Advantages}
+Our system has devoted to provide powerful and light solution for machine learning tasks. And it has many advantages compared to traditional tools, such as enable to process massive data, high scalability and performance etc. Beyond that, we are going to introduce some main advantages of our system.
+\subsection{Lowing the Barriers}
+A machine learning job is formulated as GUI-based dataflow in our system. Datasets and Programs are displayed as GUI components as well. Users are enable to create, configure, submit, and monitor a job in drag-and-drop manner. Users could track the status of job according to the state reported by dataflow DAG at runtime. The workload of workflow configurations is replaced with dataflow drawing. The implementation details of programs and the diversity of programs are hidden, while the usage are emphasized. Besides, job schema could be save, modify and reuse. In this way, machine learning is no longer a tough task. It's easy to understand and create a job in our system. Our system has lowered the barrier of machine learning.
 
 \subsection{Highly Reusable}
-As is shown above, BDA Studio has managed a lot of resources, include dataset, program, job schema, intermediate output data. And we have done effort to make these resources to obtain fully utilized, which is approved to improve our system's user experience.
+As is shown above, Studio has managed a lot of resources, include dataset, program, job schema, intermediate output data. And we have done effort to make these resources to obtain fully utilized, which is approved to improve our system's user experience.
 
 Reusability is highly supported in different aspects and granularity by our system.  Correspondingly, we have datasets and program reuse, job schema reuse and intermediate output data reuse.
 
 The datasets and programs could be shared across different users, so that one may not need to upload a new program or dataset if there exists one in our system. Although, it is never mind to exists several program for the same algorithm, that gives user more choices and help select out the one better. 
 
-The job schema is a XML document defines the elements, parameters and types that represent a job in BDA. With job schema, it is easily to save, modify, reload and reuse a job. When the job finished error or one need to modify the job, it is not necessary to create a job new. One could directly open the old job and modify, then rerun it. Accordingly, the job schema will be update after the job is edited, while the old one be backed. We also support url get request for job, so that one could share and access to a job easily. In addition, jobs are enable to be clone that greatly facilitate who want to construct several similar jobs.
+The job schema is a XML document defines the elements, parameters and types that represent a job in our system. With job schema, it is easily to save, modify, reload and reuse a job. When the job finished error or one need to modify the job, it is not necessary to create a job new. One could directly open the old job and modify, then rerun it. Accordingly, the job schema will be update after the job is edited, while the old one be backed. We also support url get request for job, so that one could share and access to a job easily. In addition, jobs are enable to be clone that greatly facilitate who want to construct several similar jobs.
 
 Intermediate output data is also reuse in our system. The same input and parameters for the same program will generate the same result( without randomness). It's not required to run every time even if the program has random. Therefore, it would reduce running time and save computation and storage greatly with reuse of intermediate output data. We support intermediate output data save and download functions. When a job is modify, we intelligently analysis whether actions in the job should be rerun according to actions' configuration. If the rerun actions will reuse the intermediate output data of non-rerun ones.
 

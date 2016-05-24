@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2016.5.10)  21 MAY 2016 22:57
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2016.5.10)  24 MAY 2016 16:54
 entering extended mode
 **sig-alternate-sample.tex
 
@@ -276,32 +276,45 @@ rview
  []
 
 File: arch.eps Graphic file (type eps)
-<arch.eps>
-Overfull \hbox (2.57373pt too wide) in paragraph at lines 254--255
- [][] 
- []
-
-[1
+<arch.eps> [1
 
 
 ]
-File: DAG.eps Graphic file (type eps)
- <DAG.eps> [2]
-Overfull \hbox (3.23657pt too wide) in paragraph at lines 310--311
+Overfull \hbox (4.4592pt too wide) in paragraph at lines 262--263
+\T1/aer/m/n/9 are t-wo com-po-nents, GUI-based S-tu-dio, Ma-chine Learn-
+ []
+
+
+Overfull \hbox (1.01357pt too wide) in paragraph at lines 271--272
+\T1/aer/m/n/9 tom-cat and some con-fig-u-ra-tions of Hadoop, S-park and Oozie. 
+
+ []
+
+File: dataflow_DAG.eps Graphic file (type eps)
+<dataflow_DAG.eps> [2]
+Overfull \hbox (5.86563pt too wide) in paragraph at lines 312--313
+[]\T1/aer/m/n/9 A ma-chine learn-ing job is for-mu-lat-ed as GUI-based dataflow
+
+ []
+
+
+Overfull \hbox (3.23657pt too wide) in paragraph at lines 317--318
 \T1/aer/m/n/9 gran-u-lar-i-ty by our sys-tem. Cor-re-spond-ing-ly, we have data
 set-
  []
 
-[3]
+[3] [4
+
+]
 ("D:\百度云同步盘\BDA\CIKM\SIG Proceedings Template-Jan2015 Zip\sig-alter
 nate-sample.aux") ) 
 Here is how much of TeX's memory you used:
  2280 strings out of 495355
- 26418 string characters out of 3183882
- 91294 words of memory out of 3000000
+ 26436 string characters out of 3183882
+ 92294 words of memory out of 3000000
  5400 multiletter control sequences out of 15000+200000
  48217 words of font info for 63 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 39i,12n,34p,665b,464s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,12n,34p,760b,464s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on sig-alternate-sample.dvi (3 pages, 20872 bytes).
+Output written on sig-alternate-sample.dvi (4 pages, 23100 bytes).
