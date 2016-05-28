@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2016.5.10)  26 MAY 2016 16:53
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2016.5.10)  28 MAY 2016 21:11
 entering extended mode
-**sig-alternate-sample.tex
+**CIKM*Demo*paper.tex
 
-("D:\百度云同步盘\BDA\CIKM\SIG Proceedings Template-Jan2015 Zip\sig-alter
-nate-sample.tex"
+("D:\百度云同步盘\BDA\CIKM\SIG Proceedings Template-Jan2015 Zip\CIKM Demo
+ paper.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
 
@@ -211,8 +211,21 @@ LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
  (C:\CTEX\MiKTeX\tex\latex\ae\t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 )))
-("D:\百度云同步盘\BDA\CIKM\SIG Proceedings Template-Jan2015 Zip\sig-alter
-nate-sample.aux")
+("D:\百度云同步盘\BDA\CIKM\SIG Proceedings Template-Jan2015 Zip\CIKM Demo
+ paper.aux"
+
+LaTeX Warning: Label `fig:dag' multiply defined.
+
+
+LaTeX Warning: Label `fig:dag' multiply defined.
+
+
+LaTeX Warning: Label `fig:dag' multiply defined.
+
+
+LaTeX Warning: Label `fig:dag' multiply defined.
+
+)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
 LaTeX Font Info:    ... okay on input line 51.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
@@ -259,9 +272,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-File: DAG.eps Graphic file (type eps)
+File: LR_DAG.eps Graphic file (type eps)
 
-<DAG.eps>
+<LR_DAG.eps>
 File: arch.eps Graphic file (type eps)
  <arch.eps> [2]
 Overfull \hbox (5.99196pt too wide) in paragraph at lines 185--186
@@ -280,18 +293,45 @@ Overfull \hbox (3.23657pt too wide) in paragraph at lines 204--205
 set-
  []
 
-[3] [4
+[3]
+File: HomePage.eps Graphic file (type eps)
+ <HomePage.eps>
+Overfull \hbox (12.0pt too wide) in paragraph at lines 245--246
+ [][] 
+ []
 
-]
-("D:\百度云同步盘\BDA\CIKM\SIG Proceedings Template-Jan2015 Zip\sig-alter
-nate-sample.aux") ) 
+File: Upload_Program.eps Graphic file (type eps)
+<Upload_Program.eps>
+Overfull \hbox (12.0pt too wide) in paragraph at lines 253--254
+ [][] 
+ []
+
+File: LR_Task_example.eps Graphic file (type eps)
+<LR_Task_example.eps>
+Overfull \hbox (12.0pt too wide) in paragraph at lines 261--262
+ [][] 
+ []
+
+File: LR_Task_stdout.eps Graphic file (type eps)
+<LR_Task_stdout.eps>
+Overfull \hbox (12.0pt too wide) in paragraph at lines 268--269
+ [][] 
+ []
+
+[4]
+("D:\百度云同步盘\BDA\CIKM\SIG Proceedings Template-Jan2015 Zip\CIKM Demo
+ paper.aux")
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2236 strings out of 495355
- 25752 string characters out of 3183882
+ 2244 strings out of 495355
+ 25842 string characters out of 3183882
  92294 words of memory out of 3000000
- 5364 multiletter control sequences out of 15000+200000
+ 5368 multiletter control sequences out of 15000+200000
  46109 words of font info for 61 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 39i,13n,34p,1755b,463s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,13n,34p,1750b,463s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on sig-alternate-sample.dvi (4 pages, 26108 bytes).
+Output written on "CIKM Demo paper.dvi" (4 pages, 27056 bytes).
