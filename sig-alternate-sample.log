@@ -1,14 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2016.5.10)  26 MAY 2016 16:53
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2016.5.10)  29 MAY 2016 22:37
 entering extended mode
 **sig-alternate-sample.tex
-
-("D:\百度云同步盘\BDA\CIKM\SIG Proceedings Template-Jan2015 Zip\sig-alter
-nate-sample.tex"
+(D:\百度云同步盘\BDA\CIKM\CIKM\sig-alternate-sample.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
-
-("D:\百度云同步盘\BDA\CIKM\SIG Proceedings Template-Jan2015 Zip\sig-alter
-nate-05-2015.cls" (C:\CTEX\MiKTeX\tex\latex\graphics\epsfig.sty
+(D:\百度云同步盘\BDA\CIKM\CIKM\sig-alternate-05-2015.cls
+(C:\CTEX\MiKTeX\tex\latex\graphics\epsfig.sty
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 
 (C:\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty
@@ -186,10 +183,10 @@ LaTeX Info: Redefining \cite on input line 1408.
 \Urlmuskip=\muskip11
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
-("D:\百度云同步盘\BDA\CIKM\SIG Proceedings Template-Jan2015 Zip\acmcopyri
-ght.sty"
+(D:\百度云同步盘\BDA\CIKM\CIKM\acmcopyright.sty
 Package: acmcopyright 2014/06/29 v1.2 Copyright statemens for ACM classes
- (C:\CTEX\MiKTeX\tex\latex\xkeyval\xkeyval.sty
+
+(C:\CTEX\MiKTeX\tex\latex\xkeyval\xkeyval.sty
 Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
 
 (C:\CTEX\MiKTeX\tex\generic\xkeyval\xkeyval.tex
@@ -210,9 +207,7 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
  (C:\CTEX\MiKTeX\tex\latex\ae\t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
-)))
-("D:\百度云同步盘\BDA\CIKM\SIG Proceedings Template-Jan2015 Zip\sig-alter
-nate-sample.aux")
+))) (D:\百度云同步盘\BDA\CIKM\CIKM\sig-alternate-sample.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
 LaTeX Font Info:    ... okay on input line 51.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
@@ -225,73 +220,150 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
 LaTeX Font Info:    ... okay on input line 51.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
 LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Try loading font information for U+msa on input line 133.
- (C:\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
+LaTeX Font Info:    Try loading font information for U+msa on input line 184.
+
+(C:\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 133.
+LaTeX Font Info:    Try loading font information for U+msb on input line 184.
 
 (C:\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 133.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 184.
 
 (C:\CTEX\MiKTeX\tex\latex\base\ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 133.
+Overfull \hbox (10.71048pt too wide) in paragraph at lines 184--184
+ []\eaddfnt lleipuner@researchlabs.org| 
+ []
 
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 184.
 (C:\CTEX\MiKTeX\tex\latex\psnfss\t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 133.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 184.
 
 
 (C:\CTEX\MiKTeX\tex\latex\psnfss\omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 133.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 184.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 185.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [1
+(C:\CTEX\MiKTeX\tex\latex\ae\t1aett.fd
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+)
+Overfull \hbox (1.0793pt too wide) in paragraph at lines 186--195
+\T1/aer/m/it/9 Prepar-ing ACM SIG Pro-ceed-ings Us-ing L[]T[]X$\OT1/cmr/m/n/9 2
+[]$ \T1/aer/m/it/9 and BibT[]X\T1/aer/m/n/9 .
+ []
+
+Excluding 'CCSXML' comment.
+LaTeX Font Info:    Try loading font information for OMS+aer on input line 254.
+
+ (C:\CTEX\MiKTeX\tex\latex\ae\omsaer.fd
+File: omsaer.fd 1999/12/27
+)
+LaTeX Font Info:    Font shape `OMS/aer/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 254.
+
+Underfull \hbox (badness 1360) in paragraph at lines 279--279
+[][]\T1/aer/m/n/9 Two of these, the \T1/aett/m/n/9 \num-bero-fau-thors \T1/aer/
+m/n/9 and \T1/aett/m/n/9 \alig-nau-
+ []
+
+[1
 
 
 ]
-File: DAG.eps Graphic file (type eps)
 
-<DAG.eps>
-File: arch.eps Graphic file (type eps)
- <arch.eps> [2]
-Overfull \hbox (5.99196pt too wide) in paragraph at lines 185--186
-\T1/aer/m/n/9 notes with in-put/output da-ta port-s on the top/bottom. Based
+LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input li
+ne 335.
+
+
+LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input li
+ne 350.
+
+
+LaTeX Warning: Citation `bowman:reasoning' on page \thepage  undefined on input
+ line 377.
+
+
+LaTeX Warning: Citation `clark:pct' on page \thepage  undefined on input line 3
+77.
+
+
+LaTeX Warning: Citation `braams:babel' on page \thepage  undefined on input lin
+e 377.
+
+
+LaTeX Warning: Citation `herlihy:methodology' on page \thepage  undefined on in
+put line 377.
+
+
+LaTeX Warning: Citation `clark:pct' on page \thepage  undefined on input line 3
+78.
+
+
+LaTeX Warning: Citation `salas:calculus' on page \thepage  undefined on input l
+ine 379.
+
+
+LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input li
+ne 379.
+
+
+LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input li
+ne 385.
+
+
+LaTeX Warning: Citation `Lamport:LaTeX' on page \thepage  undefined on input li
+ne 396.
+
+[2]
+File: fly.eps Graphic file (type eps)
+ <fly.eps>
+File: fly.eps Graphic file (type eps)
+ <fly.eps>
+
+LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
+(Font)              using `T1/aett/m/n' instead on input line 481.
+
+File: flies.eps Graphic file (type eps)
+<flies.eps>
+File: rosette.eps Graphic file (type eps)
+ <rosette.eps>
+\c@theorem=\count110
+\c@definition=\count111
+
+Overfull \hbox (15.60826pt too wide) detected at line 558
+\OML/cmm/m/it/9 l \OT1/cmr/m/n/9 = [] \OML/cmm/m/it/9 f\OT1/cmr/m/n/9 (\OML/cmm
+/m/it/9 x\OT1/cmr/m/n/9 ) = [] [] = [] \OML/cmm/m/it/9 g\OT1/cmr/m/n/9 (\OML/cm
+m/m/it/9 x\OT1/cmr/m/n/9 ) \OMS/cmsy/m/n/9  [] [] \OT1/cmr/m/n/9 = 0 \OMS/cmsy
+/m/n/9  \OML/cmm/m/it/9 L \OT1/cmr/m/n/9 = 0\OML/cmm/m/it/9 ;
  []
 
 
-Overfull \hbox (5.86563pt too wide) in paragraph at lines 197--198
-[]\T1/aer/m/n/9 A ma-chine learn-ing job is for-mu-lat-ed as GUI-based dataflow
+LaTeX Warning: Citation `salas:calculus' on page \thepage  undefined on input l
+ine 568.
 
- []
+[3] (D:\百度云同步盘\BDA\CIKM\CIKM\sig-alternate-sample.bbl) [4]
+(D:\百度云同步盘\BDA\CIKM\CIKM\sig-alternate-sample.aux)
 
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Overfull \hbox (3.23657pt too wide) in paragraph at lines 204--205
-\T1/aer/m/n/9 gran-u-lar-i-ty by our sys-tem. Cor-re-spond-ing-ly, we have data
-set-
- []
-
-[3] [4
-
-]
-("D:\百度云同步盘\BDA\CIKM\SIG Proceedings Template-Jan2015 Zip\sig-alter
-nate-sample.aux") ) 
+ ) 
 Here is how much of TeX's memory you used:
- 2236 strings out of 495355
- 25752 string characters out of 3183882
- 92294 words of memory out of 3000000
- 5364 multiletter control sequences out of 15000+200000
- 46109 words of font info for 61 fonts, out of 3000000 for 9000
+ 2306 strings out of 495355
+ 26470 string characters out of 3183882
+ 94294 words of memory out of 3000000
+ 5421 multiletter control sequences out of 15000+200000
+ 49877 words of font info for 64 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 39i,13n,34p,1755b,463s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,12n,34p,238b,464s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on sig-alternate-sample.dvi (4 pages, 26108 bytes).
+Output written on sig-alternate-sample.dvi (4 pages, 28508 bytes).

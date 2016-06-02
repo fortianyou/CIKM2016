@@ -1,0 +1,40 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: CIKM Demo paper_5-30.aux
+The style file: abbrv.bst
+Database file #1: sigproc.bib
+Warning--I didn't find a database entry for "XXX"
+Warning--to sort, need author or key in Hadoop
+Warning--to sort, need author or key in Spark
+Warning--to sort, need author or key in Mahout
+Warning--to sort, need author or key in SparkMLLib
+Warning--to sort, need author or key in Oozie
+Warning--to sort, need author or key in HUE
+Warning--to sort, need author or key in Azkaban
+Warning--to sort, need author or key in AzureML
+Warning--empty author in HUE
+Warning--empty booktitle in HUE
+Warning--empty year in HUE
+Warning--empty author in Hadoop
+Warning--empty booktitle in Hadoop
+Warning--empty year in Hadoop
+Warning--empty author in Oozie
+Warning--empty booktitle in Oozie
+Warning--empty year in Oozie
+Warning--empty author in Azkaban
+Warning--empty booktitle in Azkaban
+Warning--empty year in Azkaban
+Warning--empty author in AzureML
+Warning--empty booktitle in AzureML
+Warning--empty year in AzureML
+Warning--empty author in Mahout
+Warning--empty booktitle in Mahout
+Warning--empty year in Mahout
+Warning--empty author in Spark
+Warning--empty booktitle in Spark
+Warning--empty year in Spark
+Warning--empty author in SparkMLLib
+Warning--empty booktitle in SparkMLLib
+Warning--empty year in SparkMLLib
+Warning--empty journal in barga2014introducing
+Warning--empty journal in islam2012oozie
+Warning--empty journal in zaharia2010spark
+(There were 36 warnings)

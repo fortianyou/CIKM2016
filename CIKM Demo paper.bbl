@@ -1,0 +1,29 @@
+\begin{thebibliography}{1}
+
+\bibitem{lu2009spark}
+R.~Lu, X.~Lin, H.~Zhu, and X.~Shen.
+\newblock Spark: A new vanet-based smart parking scheme for large parking lots.
+\newblock 2009.
+
+\bibitem{dean2004mapreduce}
+J.~Dean and S.~Ghemawat.
+\newblock Mapreduce: simplified data processing on large clusters.
+\newblock {\em Operating Systems Design and Implementation}, 2004.
+
+\bibitem{dean2010mapreduce}
+J.~Dean and S.~Ghemawat.
+\newblock Mapreduce: a flexible data processing tool.
+\newblock {\em Communications of The ACM}, 53(1):72--77, 2010.
+
+\bibitem{islam2012oozie}
+M.~Islam, A.~K. Huang, M.~Battisha, M.~Chiang, S.~Srinivasan, C.~Peters,
+  A.~Neumann, and A.~Abdelnur.
+\newblock Oozie (towards a scalable workflow management system for hadoop).
+\newblock 2012.
+
+\bibitem{barga2014introducing}
+R.~Barga, V.~Fontama, and W.~H. Tok.
+\newblock Introducing microsoft azure machine learning.
+\newblock 2014.
+
+\end{thebibliography}

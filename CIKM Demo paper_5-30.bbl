@@ -1,0 +1,53 @@
+\begin{thebibliography}{10}
+
+\bibitem{HUE}
+http://gethue.com/.
+
+\bibitem{Hadoop}
+http://hadoop.apache.org/.
+
+\bibitem{Oozie}
+http://oozie.apache.org/.
+
+\bibitem{Azkaban}
+https://azkaban.github.io/.
+
+\bibitem{AzureML}
+https://azure.microsoft.com/en-us/services/machine-learning/.
+
+\bibitem{Mahout}
+https://mahout.apache.org/.
+
+\bibitem{Spark}
+http://spark.apache.org/.
+
+\bibitem{SparkMLLib}
+http://spark.apache.org/mllib/.
+
+\bibitem{barga2014introducing}
+R.~Barga, V.~Fontama, and W.~H. Tok.
+\newblock Introducing microsoft azure machine learning.
+\newblock 2014.
+
+\bibitem{dean2004mapreduce}
+J.~Dean and S.~Ghemawat.
+\newblock Mapreduce: simplified data processing on large clusters.
+\newblock {\em Operating Systems Design and Implementation}, 2004.
+
+\bibitem{dean2010mapreduce}
+J.~Dean and S.~Ghemawat.
+\newblock Mapreduce: a flexible data processing tool.
+\newblock {\em Communications of The ACM}, 53(1):72--77, 2010.
+
+\bibitem{islam2012oozie}
+M.~Islam, A.~K. Huang, M.~Battisha, M.~Chiang, S.~Srinivasan, C.~Peters,
+  A.~Neumann, and A.~Abdelnur.
+\newblock Oozie (towards a scalable workflow management system for hadoop).
+\newblock 2012.
+
+\bibitem{zaharia2010spark}
+M.~Zaharia, N.~M.~M. Chowdhury, M.~J. Franklin, S.~Shenker, and I.~Stoica.
+\newblock Spark: Cluster computing with working sets.
+\newblock 2010.
+
+\end{thebibliography}

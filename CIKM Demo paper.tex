@@ -132,7 +132,7 @@ Tianyou Guo, Jun Xu\thanks{Jun Xu is the corresponding author.}, Xiaohui Yan, Ji
 }
 \maketitle
 \begin{abstract}
-Machine learning algorithms have become the key components in many big data applications. However, the full potential of machine learning is still far from been realized because using machine learning algorithms is hard, especially on distributed platforms such as Hadoop and Spark. The key barriers come from not only the implementation of the algorithms themselves, but also the processing for applying them to real applications which often involve multiple steps and different algorithms. In this demo we present a general-purpose dataflow-based system for easing the process of applying machine learning algorithms to real world tasks. In the system a learning task is formulated as a directed acyclic graph (DAG) in which each node represents an operation (e.g., a machine learning algorithm), and each edge represents the flow of the data from one node to its descendants. The task can be defined manually or be cloned from existing tasks/templates. After submitting a task to the cloud, each node will be automatically scheduled to execute according to the DAG. Graphical user interface is implemented for making users to create, configure, submit, and monitor a task in a drag-and-drop manner. Advantages of the system include 1) lowing the barriers of defining and executing machine learning tasks; 2) sharing and re-using the implementations of the algorithms, the job DAGs, and the (intermediate) experimental results; 3) seamlessly integrating the stand-alone algorithms as well as the distributed algorithms in one task. The system has been deployed as a machine learning service in Institute of Computing Technology, Chinese Academy of Sciences and can be access from the Internet\footnote{http://}.
+Machine learning algorithms have become the key components in many big data applications. However, the full potential of machine learning is still far from been realized because using machine learning algorithms is hard, especially on distributed platforms such as Hadoop and Spark\cite{lu2009spark}. The key barriers come from not only the implementation of the algorithms themselves, but also the processing for applying them to real applications which often involve multiple steps and different algorithms. In this demo we present a general-purpose dataflow-based system for easing the process of applying machine learning algorithms to real world tasks. In the system a learning task is formulated as a directed acyclic graph (DAG) in which each node represents an operation (e.g., a machine learning algorithm), and each edge represents the flow of the data from one node to its descendants. The task can be defined manually or be cloned from existing tasks/templates. After submitting a task to the cloud, each node will be automatically scheduled to execute according to the DAG. Graphical user interface is implemented for making users to create, configure, submit, and monitor a task in a drag-and-drop manner. Advantages of the system include 1) lowing the barriers of defining and executing machine learning tasks; 2) sharing and re-using the implementations of the algorithms, the job DAGs, and the (intermediate) experimental results; 3) seamlessly integrating the stand-alone algorithms as well as the distributed algorithms in one task. The system has been deployed as a machine learning service in Institute of Computing Technology, Chinese Academy of Sciences and can be access from the Internet.
 \end{abstract}
 
 
@@ -143,130 +143,151 @@ Machine learning has been become the core of many big data applications such as 
 
 In this demo, we present a general-purpose machine learning system for lowering the barrier to applying machine learning algorithms. In the system, we consider the process of applying machine learning algorithms from the viewpoint of dataflow. Thus, the process can be formulated as a directed directed acyclic graph (DAG) in which the source data flow into the root nodes. Each node makes operations on the data, generates new data, and sends the generated data to its descendant nodes for conducting further operations. Finally, the results flow out from the leaf nodes.
 
-The system consists of three major components: 1) A distributed machine learning library which implements not only popular used machine learning algorithms, but also the algorithms for data pre/post-processing, data format transformation, feature generation, performance evaluation etc. These algorithms are mainly implemented based on Spark.  2) A GUI-based machine learning studio system which enable users to create, configure, submit, monitor, and sharing their machine learning process in a drag-and-drop manner. All of the algorithms in the machine learning library can be accessed and configured in the studio system. They are the key building blocks for constructing machine learning tasks. 3) A cloud service for executing the tasks. We build the service based on the open source big data platform of Hadoop and Spark. After receiving a task DAG from the GUI, each node will be automatically scheduled to run when all of its dependent data sources are ready. The algorithm corresponds to the node will scheduled to run on Linux, Spark, or Map-Reduce, according to their implementation.
+The system consists of three major components: 1) A distributed machine learning library which implements not only popular used machine learning algorithms, but also the algorithms for data pre/post-processing, data format transformation, feature generation, performance evaluation etc. These algorithms are mainly implemented based on Spark.  2) A GUI-based machine learning studio system which enable users to create, configure, submit, monitor, and sharing their machine learning process in a drag-and-drop manner. All of the algorithms in the machine learning library can be accessed and configured in the studio system. They are the key building blocks for constructing machine learning tasks. 3) A cloud service for executing the tasks. We build the service based on the open source big data platform of Hadoop and Spark. After receiving a task DAG from the GUI, each node will be automatically scheduled to run when all of its dependent data sources are ready. The algorithm corresponds to the node will scheduled to run on Linux, Spark, or Map-Reduce\cite{dean2004mapreduce,dean2010mapreduce}, according to their implementation.
 
 The system offers several distinct advantages for applying machine learning to real tasks: 1) The dataflow formulation of machine learning tasks is quite intuitive and easy to understand. The GUI hides the unnecessary technical details of the algorithms (e.g., the complex command line) and helps user to focus on building the dataflow; 2) Users can upload and share their own algorithms and data to the system. They can also share their historical tasks to other users. In this way, a new task can be created easily by cloning and making minor modifications. To save the execution time and computational resource, the results generated by existing tasks can be reused by other tasks; 3) It has the ability to use the stand-alone algorithms, Spark algorithms, and Map-Reduce algorithms in one DAG. Ordinal users can use and configure the distributed algorithms in the same way as that of the stand-alone algorithms.
 
-Several similar systems have been developed and released in enterprise and open source community. Mahout and MLlib are two distributed machine learning libraries developed with Hadoop Map-Reduce and Spark, respectively. A number of popular machine learning algorithms have been implemented in the libraries. To making these algorithms working together, people considers the application of machine learning as a workflow and several workflow schedulers have been developed, including the open source systems of Oozie, HUE, and Azkaban etc. Microsoft has also released Azure machine learning in which a machine learning process is formalized as a dataflow. Azure machine learning is built on the cloud computing platform Microsoft Azure and provide machine learning service in the cloud.
+Several similar systems have been developed and released in enterprise and open source community. Mahout and MLlib are two distributed machine learning libraries developed with Hadoop Map-Reduce and Spark, respectively. A number of popular machine learning algorithms have been implemented in the libraries. To making these algorithms working together, people considers the application of machine learning as a workflow and several workflow schedulers have been developed, including the open source systems of Oozie\cite{islam2012oozie}, HUE, and Azkaban etc. Microsoft has also released Azure machine learning\cite{barga2014introducing} in which a machine learning process is formalized as a dataflow. Azure machine learning is built on the cloud computing platform Microsoft Azure and provide machine learning service in the cloud.
 
 In the following sections, we first introduce the dataflow formalization of the machine learning process, followed by the system architecture and core technologies used in the system. Finally, we give the demonstration plan.
 
 \section{Machine Learning Process as a Dataflow}
 A typical application of the machine learning algorithms consists of several steps include gathering and preprocessing the data, extracting features, applying the training algorithm, and testing the performances of the trained model. From the viewpoint of data, the whole process can be viewed as the raw data flow into the processing pipeline. After a number of step by step operations on the data, the result data flow out the pipeline. The process could be much more complex if multiple machine learning algorithms are involved.
 
-Our system formulates the complex process of applying machine learning algorithms as a DAG of dataflow in which the data flows in the graph according to the directed edges. The data will be processed by the nodes it flows. Each node consists of several input ports, output ports, and an operation. Each input port corresponds to an flow in data file and each output port corresponds to a data file that flow out. The operation is a (stand-alone or distributed) program that reads the input ports and writes the results to output ports. In our system, the operation of each node is implemented as a Linux command line. A dataflow DAG may also contain some data nodes which represent the input data sources. Please note that a data node only have one output port. Figure~\ref{fig:dag} shows a typical dataflow DAG of applying the machine learning algorithm of logistic regression for binary classification.
+Our system formulates the complex process of applying machine learning algorithms as a DAG of dataflow in which the data flows in the graph according to the directed edges. The data will be processed by the nodes it flows. Each node consists of several input ports, output ports, and an operation. Each input port corresponds to an flow in data file and each output port corresponds to a data file that flow out. The operation is a (stand-alone or distributed) program that reads the input ports and writes the results to output ports. In our system, the operation of each node is implemented as a Linux command line. A dataflow DAG may also contain some data nodes which represent the input data sources. Please note that a data node only have one output port. Figure~\ref{fig:dag} shows a typical dataflow DAG of applying the machine learning algorithm of logistic regression for binary classification. Different colors are used to show the different status of the nodes: green for success, yellow for under executing, gray for waiting, and red for failed.
 \begin{figure}
 \centering
-\includegraphics[width = 0.4\textwidth]{LR_DAG.eps}
+\includegraphics[width = 0.4\textwidth]{dataflow_DAG.eps}
 \caption{An example dataflow DAG for representing the machine learning process.}
 \label{fig:dag}
 \end{figure}
 
 \section{System Overview}
-\subsection{System Architecture}
-The demo is a GUI-based machine learning system designed on distributed environments. We have divided the system into two architecture hierarchies. Figure~\ref{fig:arch} is an overview of our system.
 
-\begin{figure}[!htb]
+\begin{figure}
 \centering
-\includegraphics[height=2.5in]{arch.eps}
-\caption{An overview of system architecture.}
+\includegraphics[width= 0.4\textwidth]{arch.eps}
+\caption{ An overview of system architecture.}
 \label{fig:arch}
 \end{figure}
 
+%\subsection{System Architecture}
+Figure~\ref{fig:arch} shows the system architecture of the our system. The whole system consists of three parts: big data infrastructure for providing the foundation services, machine learning library for providing the core building blocks of the machine learning tasks, and machine learning studio for providing user-friendly GUI to lower the barriers of using machine learning.
+
+\noindent\textbf{Big Data Infrastructure}
+
+Our system is built upon the open source big data system of Hadoop and Spark. All the data, machine learning algorithms, and other dependent information are stored in the distributed file system HDFS and data management system of Hive. A relational database system of MySQL is used for storing the metadata. Our system also depend on the distributed computational framework of Map-Reduce and Spark. All of the computational resources are managed with Yarn. Each of the submitted machine learning task (a dataflow DAG) is first converted to a workflow DAG and scheduled with the workflow scheduler system Oozie.
+
+\noindent\textbf{Machine learning library}
+
+The machine learning library implemented a number of popular machine learning algorithms (e.g., classification, topic modeling, graph processing, and information recommendation etc). For each of the algorithm, we implemented the distributed version on Spark as well as the standalone version because the standalone versions are usually more efficient than the distributed versions if the datasets are not big enough. Besides the core algorithms, the library also implemented necessary modules for supporting the core algorithms including data pre/post-processing, data format transformation, feature extraction, and performance evaluation etc. All of the algorithms and modules can be called via both the Linux command line and Java API. These algorithms constitute the core building blocks for users to define their machine learning tasks.
+
+
+\noindent\textbf{Machine learning studio}
+
+The main goal of the machine learning studio is to provide a user-friendly GUI so that ordinary users can use the machine learning algorithms to solve their own problems easily. The machine learning studio is implemented as a web service and can be accessed via web browsers. It provides the follow main features:
 \begin{itemize}
-\item \textbf{Layer1:} This is the foundation layer of the system. Oozie is used as job scheduler, where Oozie workflow will be generate according to dataflow DAG. The system support multiple computation frameworks, such as Map-Reduce, Spark and Local. Besides, we use database to store meta data of programs and jobs, while other data resources are stored on HDFS or managed by Hive.
-\item \textbf{Layer2:} There are two components in this layer, GUI-based Studio, Machine Learning Library. Studio is in the front end of our system, which provides GUI based dataflow machine learning framework. Machine learning library provide a wealthy of popular algorithms.
+    \item \textbf{Resource management}: All algorithms implemented in the machine learning library can be accessed from the studio system. The system also provide a a number of data and tasks for showing how to use the algorithms to solve a problem. To construct a machine learning task, a user may directly use the algorithms and data in the system. She can also upload their own data and algorithm packages. To upload an algorithm package, the user would specify the format of the Linux command line string for running the algorithm. The string defines the program name, the input data, the output data, and the parameters. In a specified task dataflow DAG, the algorithm can be scheduled to run according to the command line. After a machine learning task is submitted, it will be assigned a unique ID and stored in the task repository. The users can check and reuse the task in the future. They can also share the task to other users.
+
+    \item \textbf{Task design}: To construct a machine learning task, a user may drag the algorithms and data sets (nodes) to the work panel, connect these nodes as a dataflow DAG, and set the parameters of all the nodes. If the user can find a similar task in our repository (the most cases), she may just clone an existing task and make necessary modifications (add/remove nodes and edges, change parameters). By selecting a node in the work panel, the parameter setting panel will be shown in the right of the page, which enables the users to set the specific parameter values for the corresponding algorithm in the task. After submitting a machine learning task, our system will check the correctness of the dataflow DAG, generating the file pathes of the temporal files, convert dataflow DAG to a workfolow DAG, and finally submit the workflow DAG to Oozie for execution.
+    
+    \item \textbf{Task monitoring}: User can monitor the progresses of a submitted task through the studio system. During the execution of a task, different colors are used to indicate the status of the nodes: green for completed successfully, yellow for under running, red for completed with errors, and gray for waiting to execute. The results of a success node can be checked and downloaded via right clicking the corresponding output ports. The information printed to the standard out and standard error consoles can also be checked by right clicking the corresponding nodes. Through this way, users can know the status of a task and debug their algorithms and tasks if any error occurred. 
+        
+    \item \textbf{Task Reusing}: An existing task can not only be used as templates for designing new tasks, it can also be reused for saving the execution time and system resource. User may directly modify a completed task (e.g., modify the parameters of the nodes, add nodes and edges, and delete nodes and edges etc.) and resubmit the task. In the newly submitted task, only the influenced nodes are scheduled to execute and the results outputted by the uninfluenced nodes will be reused directly. For solving a real task, users usually need to tune their task dataflow DAG and parameters of the algorithms over and over. Task reusing provides us an effective and efficient way to save the user waiting time and system resources. 
+\end{itemize}
+
+\section{Advantages}
+Our system offers the following advantages. 
+
+1) It is an easy to use and quite powerful system. The dataflow DAG formulation of the machine learning task is intuitive and easy to understand for ordinary users. Much of the unnecessary details are hidden. On the other hand, it still provides a lot of details (e.g., the parameters settings, the input/output ports etc.) for expert users.
+
+2) The system seamlessly integrates the heterogeneous programs in one task. Since we used the HDFS for exchanging the information across different nodes, we have very few restriction on the form of the programs for the DAG nodes. The program corresponds to a node could be executed in stand-alone or distributed manner. It could be written with the programming language of C++, Java, Python, Perl or even the shell language.
+
+3) The data, algorithms, and tasks in the system are highly reusable. Users can make use of the data and algorithms managed in system for constructing different machine learning tasks. A task can also be cloned to construct similar tasks. Moreover, the intermediate results of an existing task can be reused by modifying and appending the task directly.
+
+
+\section{Demo Plan}
+We will present our system in the following aspects:
+\begin{itemize}
+\item First, we will use a poster to give an overview of system architecture and briefly show the dataflow DAG formulation of the machine learning tasks and the system components.
+\item Next, we will show the audience how to use the system to complete a example machine learning task, including creating, configuring, submitting, and monitoring a task.
+\item After that, we will show the algorithms and datasets in the system. We will also show advanced functions of the system such as uploading new algorithms and datasets, sharing and reusing existing tasks etc. The audience will gain a deeper understanding on the system.
+\item Finally, we will share our thoughts on the strengths and weakness of the system. We will further discuss future work.
 \end{itemize}
 
 
-\subsection{GUI-based Studio}
-Studio is a web service in the front end of our system, which allowed user to access to services provided by our system easily. Studio provides functionalities include Graphical UI(GUI), dataflow framework, resource management, and job creation and monitor.
-
-In Studio, datasets and programs are displayed as GUI notes with input/output data ports on the top/bottom. Based on GUI nodes, we implement a GUI based dataflow framework for machine learning job. Under this framework, each GUI node denotes represents an operation( e.g., a machine learning algorithm), and each edge represents the flow of the data from its descendants. 
-
-After a job dataflow DAG is submitted, Studio would generate unique random file path on HDFS for each output port of operation nodes. Then, the job would be sent for scheduling by Oozie and running on Hadoop, where Oozie workflow is generated according dataflow DAG. Based on Oozie, we support job status monitor as well in real time. On the cloud side, each operation is started up by a shell script, which is used to prepare the environment, execute the command line of operation, and do post-processing of the operation.
-
-\subsection{Machine Learning Library}
-Machine Learning Library provides a wealth of algorithms, that could be categorized as data pre/post-processing, data format transformation, feature generation, machine learning, and performance evaluation. We have both Standalone and Spark implementations for each algorithm. Also, we provide a sort of API for Machine Learning Lib. 
-
-All these algorithms are wrap as runnable programs and uploaded to our system. The runnable programs uploaded are displayed as GUI nodes of our system that are reusable. In this way, the user is free to program, and enabled to focus on the usage of algorithms. Besides, our system allows registers to upload custom programs and third party programs to our system as well. This is different from traditional tools that are forbidden program upload.
-
-\section{Advantages}
-Our system has devoted to provide powerful and light solution for machine learning tasks. And it has many advantages compared to traditional tools, such as enable to process massive data, high scalability and performance etc. Beyond that, we are going to introduce some main advantages of our system.
-\subsection{Lowing the Barriers}
-A machine learning job is formulated as GUI-based dataflow in our system. Datasets and Programs are displayed as GUI components as well. Users are enabled to create, configure, submit, and monitor a job in drag-and-drop manner. Also, users could track the status of job according to the state reported by dataflow DAG at runtime. The workload of workflow configurations is replaced by drawing dataflow. The implementation details of programs and the diversity of programs are hidden, while the usage are emphasized. Besides, job schema could be save, modify and reuse.
-
-In this way, machine learning is no longer a tough task. Because users are trouble by the complicated implementation and obscure command usage of algorithms no longer. Also, machine learning job construction is fairly easy in drag-and-drop manner. It's easy to understand and create a job in our system even for freshmen.
-
-\subsection{Highly Reusable}
-As is shown above, Studio has managed a lot of resources, include dataset, program, job schema, intermediate output data. And we have done effort to make these resources to obtain fully utilized, which is approved to improve our system's user experience.
-
-Reusability is highly supported in different aspects and granularity by our system.  Correspondingly, we have datasets and program reuse, job schema reuse and intermediate output data reuse.
-
-The datasets and programs could be shared across different users, so that one may not need to upload a new program or dataset if there exists one in our system. Although, it is never mind to exists several program for the same algorithm, that gives user more choices and help select out the one better. 
-
-The job schema is a XML document defines the elements, parameters and types that represent a job in our system. With job schema, it is easily to save, modify, reload and reuse a job. When the job finished error or one need to modify the job, it is not necessary to create a job new. One could directly open the old job and modify, then rerun it. Accordingly, the job schema will be update after the job is edited, while the old one be backed. We also support url get request for job, so that one could share and access to a job easily. In addition, jobs are enabled to be clone that greatly facilitate who want to construct several similar jobs.
-
-Intermediate output data is also reuse in our system. The same input and parameters for the same program will generate the same result( without randomness). It's not required to run every time even if the program has random. Therefore, it would reduce running time and save computation and storage greatly with reuse of intermediate output data. We support intermediate output data save and download functions. When a job is modify, we intelligently analysis whether actions in the job should be rerun according to actions' configuration. If the rerun actions will reuse the intermediate output data of non-rerun ones.
-
-
-\subsection{Heterogeneous System Architecture}
-
-As we all known, machine learning job always consist of several diverse operations. Usually, they might be implemented using variety tools and languages, and run in different manners( Standalone or Distributed, Map-Reduce or Spark etc.) appropriately. 
-
-Fortunately, jobs are regarded as data transformation in dataflow framework. That's job operations are black boxes communicated with data flows. And it's never mind that operations are heterogeneous.
-
-We seamlessly integrated standalone as well as distributed algorithms in one job. All resources are persist on HDFS or managed by Hive in our system. All program will be start up by a start-up script. For standalone program, the script will download the resources demanded for the standalone program before start up it and then upload the result outputs after it finished. For some small dataset, standalone programs might be more time saving and less resource consuming. While, distributed programs have advantages in processing massive data. Hence, with the correct combinations of programs, our system will leverage their advantages.
-
-In our system, each program is running by executed a shell command line in the start-up script. In this way, we support tools of different languages run together, includes C/C++, Java, Scala, python, shell etc, which gives user more unrestrained language choices.
-
-\section{Conclusions}
-Machine learning algorithms have become the key components in many cutting edge big data applications. In this demo we present a general-purpose dataflow-based system for easing the process of applying machine learning algorithms to real world tasks. Advantages of the system include 1) lowing the barriers of understanding and applications of machine learning; 2) sharing the implementations of the algorithms, the job DAGs, and re-using the (intermediate) experimental results; 3) seamlessly integrating the stand-alone algorithms as well as the distributed algorithms in one job.
+\bibliographystyle{abbrv}
+\bibliography{sigproc}
 
 %ACKNOWLEDGMENTS are optional
-\section{Acknowledgments}
-This section is optional; it is a location for you
-to acknowledge grants, funding, editing assistance and
-what have you.  In the present case, for example, the
-authors would like to thank Gerald Murray of ACM for
-his help in codifying this \textit{Author's Guide}
-and the \textbf{.cls} and \textbf{.tex} files that it describes.
 
+\newpage
 %APPENDICES are optional
 %\balancecolumns
 \appendix
-%Appendix A
 
 Online system URL is http://159.226.40.104:18080/studio/. 
+If you don't want to register an account, please use account \textbf{bdaict@hotmail.com}, the password is \textbf{bdaict}.
 
-\textbf{System Home Page}
+\noindent\textbf{System Home Page}
+
+An user of our system must register or login firstly from the home page showed as follow:
 \begin{figure}[!htb]
 \centering
 \includegraphics[width = 0.5\textwidth]{HomePage.eps}
-\caption{An example dataflow DAG for representing the machine learning process.}
-\label{fig:dag}
 \end{figure}
 
+\noindent\textbf{An Example of Machine Learning Job}
+
+We support drag-and-drop manner of machine learning job construction. The parameters and informations of the job is also configurable from UI page. Shown as follow:
+\begin{figure}[!htb]
+\centering
+\includegraphics[width = 0.5\textwidth]{job_construct.eps}
+\end{figure}
+
+After dataflow DAG is well configured, please click "submit" button to submit and run the job. As is shown, the job is running:
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width = 0.5\textwidth]{job_submit.eps}
+\end{figure}
+
+One could right click on the green output port of finished executing node to preview the output data. One could check the stdout and stderr logs from the right click menu of each finished executing node as well.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width = 0.5\textwidth]{job_data_output.eps}
+\end{figure}
+
+When the job is finished, one is enable to modify and append operations to the job. As is shown bellow, we had add some new operation node into the dataflow DAG:
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width = 0.5\textwidth]{job_reuse.eps}
+\end{figure}
+
+Submit the job again, the node which had been finished would be skipped. and the result output data would be reused for the new operations.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width = 0.5\textwidth]{job_reuse_submit.eps}
+\end{figure}
+
+Finally, one could have a sight on the job at anytime/anywhere through the URL respect to the job.
+\begin{figure}[!htb]
+\centering
+\includegraphics[width = 0.5\textwidth]{job_view.eps}
+\end{figure}
+
+
+
+\noindent\textbf{Program Upload Panel}
+
+We support program upload and semi-auto command line format generation by the panel bellow, where the basic informations are on the left, command line format configuration region on the right, and program package upload region on the bottom:
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width = 0.5\textwidth]{Upload_Program.eps}
-\caption{An example dataflow DAG for representing the machine learning process.}
-\label{fig:dag}
 \end{figure}
 
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[width = 0.5\textwidth]{LR_Task_example.eps}
-\caption{An example dataflow DAG for representing the machine learning process.}
-\label{fig:dag}
-\end{figure}
-
-\begin{figure}[!htb]
-\centering
-\includegraphics[width = 0.5\textwidth]{LR_Task_stdout.eps}
-\caption{An example dataflow DAG for representing the machine learning process.}
-\label{fig:dag}
-\end{figure}
 \end{document}

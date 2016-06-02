@@ -1,14 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2016.5.10)  28 MAY 2016 21:11
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2016.5.10)  30 MAY 2016 11:15
 entering extended mode
 **CIKM*Demo*paper.tex
-
-("D:\百度云同步盘\BDA\CIKM\SIG Proceedings Template-Jan2015 Zip\CIKM Demo
- paper.tex"
+("D:\百度云同步盘\BDA\CIKM\CIKM\CIKM Demo paper.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
-
-("D:\百度云同步盘\BDA\CIKM\SIG Proceedings Template-Jan2015 Zip\sig-alter
-nate-05-2015.cls" (C:\CTEX\MiKTeX\tex\latex\graphics\epsfig.sty
+(D:\百度云同步盘\BDA\CIKM\CIKM\sig-alternate-05-2015.cls
+(C:\CTEX\MiKTeX\tex\latex\graphics\epsfig.sty
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 
 (C:\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty
@@ -186,10 +183,10 @@ LaTeX Info: Redefining \cite on input line 1408.
 \Urlmuskip=\muskip11
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
-("D:\百度云同步盘\BDA\CIKM\SIG Proceedings Template-Jan2015 Zip\acmcopyri
-ght.sty"
+(D:\百度云同步盘\BDA\CIKM\CIKM\acmcopyright.sty
 Package: acmcopyright 2014/06/29 v1.2 Copyright statemens for ACM classes
- (C:\CTEX\MiKTeX\tex\latex\xkeyval\xkeyval.sty
+
+(C:\CTEX\MiKTeX\tex\latex\xkeyval\xkeyval.sty
 Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
 
 (C:\CTEX\MiKTeX\tex\generic\xkeyval\xkeyval.tex
@@ -210,22 +207,7 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
  (C:\CTEX\MiKTeX\tex\latex\ae\t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
-)))
-("D:\百度云同步盘\BDA\CIKM\SIG Proceedings Template-Jan2015 Zip\CIKM Demo
- paper.aux"
-
-LaTeX Warning: Label `fig:dag' multiply defined.
-
-
-LaTeX Warning: Label `fig:dag' multiply defined.
-
-
-LaTeX Warning: Label `fig:dag' multiply defined.
-
-
-LaTeX Warning: Label `fig:dag' multiply defined.
-
-)
+))) ("D:\百度云同步盘\BDA\CIKM\CIKM\CIKM Demo paper.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
 LaTeX Font Info:    ... okay on input line 51.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
@@ -239,7 +221,8 @@ LaTeX Font Info:    ... okay on input line 51.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
 LaTeX Font Info:    ... okay on input line 51.
 LaTeX Font Info:    Try loading font information for U+msa on input line 133.
- (C:\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
+
+(C:\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 133.
@@ -272,66 +255,81 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-File: LR_DAG.eps Graphic file (type eps)
+File: dataflow_DAG.eps Graphic file (type eps)
 
-<LR_DAG.eps>
+<dataflow_DAG.eps>
 File: arch.eps Graphic file (type eps)
- <arch.eps> [2]
-Overfull \hbox (5.99196pt too wide) in paragraph at lines 185--186
-\T1/aer/m/n/9 notes with in-put/output da-ta port-s on the top/bottom. Based
+ <arch.eps>
+Overfull \hbox (1.80325pt too wide) in paragraph at lines 183--184
+\T1/aer/m/n/9 pop-u-lar ma-chine learn-ing al-go-rithm-s (e.g., clas-si-fi-ca-t
+ion, top-
  []
 
-
-Overfull \hbox (5.86563pt too wide) in paragraph at lines 197--198
-[]\T1/aer/m/n/9 A ma-chine learn-ing job is for-mu-lat-ed as GUI-based dataflow
-
- []
-
-
-Overfull \hbox (3.23657pt too wide) in paragraph at lines 204--205
-\T1/aer/m/n/9 gran-u-lar-i-ty by our sys-tem. Cor-re-spond-ing-ly, we have data
-set-
- []
-
-[3]
+[2] ("D:\百度云同步盘\BDA\CIKM\CIKM\CIKM Demo paper.bbl" [3])
 File: HomePage.eps Graphic file (type eps)
- <HomePage.eps>
+
+<HomePage.eps>
+Overfull \hbox (12.0pt too wide) in paragraph at lines 237--238
+ [][] 
+ []
+
+File: job_construct.eps Graphic file (type eps)
+<job_construct.eps>
 Overfull \hbox (12.0pt too wide) in paragraph at lines 245--246
  [][] 
  []
 
-File: Upload_Program.eps Graphic file (type eps)
-<Upload_Program.eps>
-Overfull \hbox (12.0pt too wide) in paragraph at lines 253--254
- [][] 
- []
-
-File: LR_Task_example.eps Graphic file (type eps)
-<LR_Task_example.eps>
-Overfull \hbox (12.0pt too wide) in paragraph at lines 261--262
- [][] 
- []
-
-File: LR_Task_stdout.eps Graphic file (type eps)
-<LR_Task_stdout.eps>
-Overfull \hbox (12.0pt too wide) in paragraph at lines 268--269
+File: job_submit.eps Graphic file (type eps)
+<job_submit.eps>
+Overfull \hbox (12.0pt too wide) in paragraph at lines 252--253
  [][] 
  []
 
 [4]
-("D:\百度云同步盘\BDA\CIKM\SIG Proceedings Template-Jan2015 Zip\CIKM Demo
- paper.aux")
+File: job_data_output.eps Graphic file (type eps)
+ <job_data_output.eps>
+Overfull \hbox (12.0pt too wide) in paragraph at lines 259--260
+ [][] 
+ []
 
-LaTeX Warning: There were multiply-defined labels.
+File: job_reuse.eps Graphic file (type eps)
+<job_reuse.eps>
+Overfull \hbox (12.0pt too wide) in paragraph at lines 266--267
+ [][] 
+ []
 
- ) 
+File: job_reuse_submit.eps Graphic file (type eps)
+<job_reuse_submit.eps>
+Overfull \hbox (12.0pt too wide) in paragraph at lines 273--274
+ [][] 
+ []
+
+File: job_view.eps Graphic file (type eps)
+<job_view.eps>
+Overfull \hbox (12.0pt too wide) in paragraph at lines 279--280
+ [][] 
+ []
+
+
+Overfull \hbox (15.77379pt too wide) in paragraph at lines 276--281
+[]\T1/aer/m/n/9 Finally, one could have a sight on the job at any-time/anywhere
+
+ []
+
+File: Upload_Program.eps Graphic file (type eps)
+<Upload_Program.eps>
+Overfull \hbox (12.0pt too wide) in paragraph at lines 290--291
+ [][] 
+ []
+
+[5] ("D:\百度云同步盘\BDA\CIKM\CIKM\CIKM Demo paper.aux") ) 
 Here is how much of TeX's memory you used:
- 2244 strings out of 495355
- 25842 string characters out of 3183882
- 92294 words of memory out of 3000000
- 5368 multiletter control sequences out of 15000+200000
+ 2261 strings out of 495355
+ 25839 string characters out of 3183882
+ 91294 words of memory out of 3000000
+ 5378 multiletter control sequences out of 15000+200000
  46109 words of font info for 61 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 39i,13n,34p,1750b,463s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,13n,34p,1749b,463s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on "CIKM Demo paper.dvi" (4 pages, 27056 bytes).
+Output written on "CIKM Demo paper.dvi" (5 pages, 28472 bytes).
